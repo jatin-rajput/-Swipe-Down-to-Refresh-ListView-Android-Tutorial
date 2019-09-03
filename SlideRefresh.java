@@ -14,7 +14,7 @@ function like making an http call and fetch the latest data.
  
 </android.support.v4.widget.SwipeRefreshLayout>
 
-2.Creating Android Project:
+//2.Creating Android Project:
 
 1. In Android Studio, create a new project by navigating to File ⇒ New Project and fill all the required details. When it prompts to select a default activity, select Blank Activity and proceed.
 
@@ -31,6 +31,7 @@ dependencies {
 3. Open colors.xml under res ⇒ values and add below color resources. If you don’t find colors.xml, create a new file with the name. The color resources added below are used to set background color for movies rank in list view.
 
 colors.xml
+
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="movie_serial_bg">
@@ -45,9 +46,10 @@ colors.xml
 
 3. Now under your project’s package, create three packages named app, activity and helper.
 
-4. Under app package, create a class named MyApplication.java and add below code. This is a singleton Application class which
-   initiates volley core objects on app launch.
+4. Under app package, create a class named MyApplication.java and add below code. This is a singleton Application class which initiates volley core objects on app launch.
+    
 MyApplication.java
+
 package info.androidhive.swiperefresh.app;
  
 import android.app.Application;
@@ -106,7 +108,9 @@ public class MyApplication extends Application {
 }
 
 5. Open AndroidManifest.xml and add MyApplication.java class to <application> tag. Also you need to add INTERNET permission as we need to make http calls.
-AndroidManifest.xml
+
+ AndroidManifest.xml
+ 
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="info.androidhive.swiperefresh">
@@ -134,6 +138,7 @@ AndroidManifest.xml
 6. Now let’s create a custom adapter class for our list view. Under res ⇒ layout folder, create an xml layout named list_row.xml. This xml renders single list row in the ListView
 
 list_row.xml
+
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
@@ -164,6 +169,7 @@ list_row.xml
 7. Under helper package, create a java class named Movie.java and add below code. This is a model class required to create movie objects to provide data to the List View
 
 Movie.java
+
 package info.androidhive.swiperefresh.helper;
  
 /**
